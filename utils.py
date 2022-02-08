@@ -1,5 +1,6 @@
 import numpy as np
 import scipy as scipy
+from scipy import linalg as LA
 
 
 def factorize_camera_matrix(P):
@@ -10,7 +11,7 @@ def factorize_camera_matrix(P):
     """
     M = P[:, 0:3]
 
-    K, R = scipy.linalg.rq(M)
+    K, R = LA.rq(M)
 
     T = np.diag(np.sign(np.diag(K)))
 
@@ -20,5 +21,5 @@ def factorize_camera_matrix(P):
     K = np.dot(K, T)
     R = np.dot(T, R)
 
-    C = np.dot(scipy.linalg.inv(-M), P[:, 3])
+    C = np.dot(LA.inv(-M), P[:, 3])
     return K, R, C
