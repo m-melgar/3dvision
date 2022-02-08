@@ -2,9 +2,9 @@ import numpy as np
 import scipy as scipy
 
 
-def factorize(P):
+def factorize_camera_matrix(P):
     """
-    
+
     :param P: camera matrix P
     :return: K internal parameters, R external parameters, C camera center
     """
