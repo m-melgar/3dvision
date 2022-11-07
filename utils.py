@@ -3,11 +3,13 @@ import scipy as scipy
 from scipy import linalg as LA
 
 
-def factorize_camera_matrix(P):
+def factorize_camera_matrix(P: np.ndarray) -> tuple(np.ndarray, np.ndarray, np.ndarray):
     """
-
-    :param P: camera matrix P
-    :return: K internal parameters, R external parameters, C camera center
+    Factorizes camera parameter P as K internal parameters, R external parameters and C camera center
+    :param P: np.ndarray([n.m])
+            camera matrix P
+    :return: np.ndarray([n.m]), np.ndarray([n.m]), np.ndarray([n.m])
+            K, R, C
     """
     M = P[:, 0:3]
 
