@@ -9,7 +9,7 @@ def factorize_camera_matrix(p: np.ndarray) -> tuple(np.ndarray, np.ndarray, np.n
     :param p: np.ndarray([n.m])
             camera matrix P
     :return: np.ndarray([n.m]), np.ndarray([n.m]), np.ndarray([n.m])
-            K, R, c
+            K, R, C
     """
     m = p[:, 0:3]
 
